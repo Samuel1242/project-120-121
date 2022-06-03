@@ -1,0 +1,200 @@
+<html>
+  <head>
+    <title>Real Time Image Identification App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js"></script>
+    <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+  <center>
+        <p>What is better Google Lens or MobileNet</p>
+        <span class="google_lens">GOOGLE LENS <img src="https://www.bing.com/th?id=Ad4c93f2425bde88c5133a1081ee67f19&w=110&h=110&c=7&rs=1&qlt=80&o=6&dpr=1.5&pid=SANGAM"></span>
+        <p>VS</p>
+        <p class="btn btn-primary" id="mobilenet">Mobilenet</p>
+        <hr>
+        <ol>
+          <div class="test_image_and_result1 col-xs-12">
+            <li class="col-sm-4 col-xs-12">
+              <b class="white1">Test Image - </b>
+              <img class="img" src="https://as1.ftcdn.net/v2/jpg/01/76/97/96/1000_F_176979696_hqfioFYq7pX13dmiu9ENrpsHZy1yM3Dt.jpg">
+            </li>
+            <h5 class="first col-sm-4 col-xs-12">
+              Output on <b>GOOGLE LENS</b> - Apple
+              <span> </span>
+            </h5>
+            <h5 class="second col-sm-4 col-xs-12">
+              Output on <b>Mobilenet Model </b> - Punching bag
+              <span> </span>
+            </h5>
+            <div class="mini_result" class="col-xs-12">
+              <h4>Result - Google lens </h4>
+              <hr>
+              <h4> </h4>
+            </div>
+          </div>
+          <div class="test_image_and_result2 col-xs-12">
+            <li class="col-sm-4 col-xs-12">
+              <b class="white2">Test Image - </b>
+              <img class="img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Football_%28soccer_ball%29.svg/1928px-Football_%28soccer_ball%29.svg.png">
+            </li>
+            <h5 class="first col-sm-4 col-xs-12">
+              Output on <b>GOOGLE LENS</b> - Ball
+              <span> </span>
+            </h5>
+            <h5 class="second col-sm-4 col-xs-12">
+              Output on <b>Mobilenet Model </b> - Ping pong ball
+              <span> </span>
+            </h5>
+            <div class="mini_result" class="col-xs-12">
+              <h4>Result - Draw </h4>
+              <hr>
+              <h4> </h4>
+            </div>
+          </div>
+          <div class="test_image_and_result3 col-xs-12">
+            <li class="col-sm-4 col-xs-12">
+              <b class="white3">Test Image - </b>
+              <img class="img" src="https://th-thumbnailer.cdn-si-edu.com/4Nq8HbTKgX6djk07DqHqRsRuFq0=/1000x750/filters:no_upscale()/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer/d5/24/d5243019-e0fc-4b3c-8cdb-48e22f38bff2/istock-183380744.jpg">
+            </li>
+            <h5 class="first col-sm-4 col-xs-12">
+              Output on <b>GOOGLE LENS</b> - The Big Banana Fun Park???
+              <span> </span>
+            </h5>
+            <h5 class="second col-sm-4 col-xs-12">
+              Output on <b>Mobilenet Model </b> - Stick
+              <span> </span>
+            </h5>
+            <div class="mini_result" class="col-xs-12">
+              <h4>Result - Google lens</h4>
+              <hr>
+              <h4> </h4>
+            </div>
+          </div>
+          <div class="test_image_and_result4 col-xs-12">
+            <li class="col-sm-4 col-xs-12">
+              <b class="white4">Test Image - </b>
+              <img class="img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Standard-lock-key.jpg/640px-Standard-lock-key.jpg">
+            </li>
+            <h5 class="first col-sm-4 col-xs-12">
+              Output on <b>GOOGLE LENS</b> - Key
+              <span> </span>
+            </h5>
+            <h5 class="second col-sm-4 col-xs-12">
+              Output on <b>Mobilenet Model </b> - Key
+              <span> </span>
+            </h5>
+            <div class="mini_result" class="col-xs-12">
+              <h4>Result - Draw </h4>
+              <hr>
+              <h4> </h4>
+            </div>
+          </div>
+          <div class="test_image_and_result5 col-xs-12">
+            <li class="col-sm-4 col-xs-12">
+              <b class="white5">Test Image - </b>
+              <img class="img" src="https://dam.which.co.uk/IC20006-0127-00-front-615x461.jpg">
+            </li>
+            <h5 class="first col-sm-4 col-xs-12">
+              Output on <b>GOOGLE LENS</b> - Iphone
+              <span> </span>
+            </h5>
+            <h5 class="second col-sm-4 col-xs-12">
+              Output on <b>Mobilenet Model </b> - Calculator
+              <span> </span>
+            </h5>
+            <div class="mini_result" class="col-xs-12">
+              <h4>Result - Google lens </h4>
+              <hr>
+              <h4> </h4>
+            </div>
+          </div>
+          <div class="test_image_and_result6 col-xs-12">
+            <li class="col-sm-4 col-xs-12">
+              <b class="white6">Test Image - </b>
+              <img class="img" src="https://glassbottles.co.uk/wp-content/uploads/2020/08/1L-Clr-Glass-Juice-Bottle-w-SL.jpg">
+            </li>
+            <h5 class="first col-sm-4 col-xs-12">
+              Output on <b>GOOGLE LENS</b> - Bottle
+              <span> </span>
+            </h5>
+            <h5 class="second col-sm-4 col-xs-12">
+              Output on <b>Mobilenet Model </b> - Shower curtain
+              <span> </span>
+            </h5>
+            <div class="mini_result" class="col-xs-12">
+              <h4>Result - Google lens</h4>
+              <hr>
+              <h4> </h4>
+            </div>
+          </div>
+          <div class="test_image_and_result7 col-xs-12">
+            <li class="col-sm-4 col-xs-12">
+              <b class="white7">Test Image - </b>
+              <img class="img" src="https://d15bv9e9f3al6i.cloudfront.net/imgs/products/cp/950x950_fitPad/PL00019-BK-ZZZ~Pilot-G2-07-Gel-Ink-Rollerball-Pen-BLG207-Black_P1.jpg">
+            </li>
+            <h5 class="first col-sm-4 col-xs-12">
+              Output on <b>GOOGLE LENS</b> - Pen 
+              <span> </span>
+            </h5>
+            <h5 class="second col-sm-4 col-xs-12">
+              Output on <b>Mobilenet Model </b> - Pen
+              <span> </span>
+            </h5>
+            <div class="mini_result" class="col-xs-12">
+              <h4>Result - Draw </h4>
+              <hr>
+              <h4> </h4>
+            </div>
+          </div>
+          <div class="test_image_and_result8 col-xs-12">
+            <li class="col-sm-4 col-xs-12">
+              <b class="white8">Test Image - </b>
+              <img class="img" src="https://assets.whsmith.co.uk/product-image/large/856218_1.jpg">
+            </li>
+            <h5 class="first col-sm-4 col-xs-12">
+              Output on <b>GOOGLE LENS</b> - Knives
+              <span> </span>
+            </h5>
+            <h5 class="second col-sm-4 col-xs-12">
+              Output on <b>Mobilenet Model </b> - Scissors
+              <span> </span>
+            </h5>
+            <div class="mini_result" class="col-xs-12">
+              <h4>Result - MobileNet</h4>
+              <hr>
+              <h4> </h4>
+            </div>
+          </div>
+          <div class="test_image_and_result9 col-xs-12">
+            <li class="col-sm-4 col-xs-12">
+              <b class="white9">Test Image - </b>
+              <img class="img" src="https://ean-images.booztcdn.com/gense/1300x1700/g/gen20496_cmetal.jpg">
+            </li>
+            <h5 class="first col-sm-4 col-xs-12">
+              Output on <b>GOOGLE LENS</b> - Spoon
+              <span> </span>
+            </h5>
+            <h5 class="second col-sm-4 col-xs-12">
+              Output on <b>Mobilenet Model </b> - Spoon
+              <span> </span>
+            </h5>
+            <div class="mini_result" class="col-xs-12">
+              <h4>Result - I believe google lens is more accurate the ModelNet as the informaton above represents.</h4>
+              <hr>
+              <h4> </h4>
+            </div>
+          </div>
+        </ol>
+      <p class="bottom">Developed by - Samuel Korangi</p>
+  </center>
+  </body>
+</html>
